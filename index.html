@@ -72,7 +72,7 @@
           seamless user experiences. From designing responsive interfaces to implementing robust server-side logic, I
           love every aspect of the development process. Let's collaborate and bring your ideas to life!</p>
         <div class="btn">
-          <a href="/education" download><span>CV</span>
+          <a href="resume.pdf" download="Abdullah_Iqbal_resume.pdf"><span>CV</span>
             <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -139,59 +139,66 @@
 
     </div>
 
-    <div class="morebtn">
+    <!-- <div class="morebtn">
       <a href="/education" class="btn"><span>View All</span>
         <i class="fas fa-arrow-right"></i>
       </a>
-    </div>
+    </div> -->
 
     </div>
   </section>
 
   <section class="skills-section" id="skills">
     <div class="skill-container">
-      <h2 class="skills-title"><i class="fas fa-code"></i> Skills</h2>
-      <div class="skills-list">
-        <div class="skill">
-          <h3>HTML</h3>
-          <div class="skill-bar html">
-            <span>95%</span>
-          </div>
+        <h2 class="skills-title"><i class="fas fa-code"></i> Skills</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <h3>HTML</h3>
+                <p>Expert in creating semantic, accessible, and SEO-friendly web pages.</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <h3>CSS</h3>
+                <p>Skilled in crafting visually appealing and responsive designs using CSS Grid and Flexbox.</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon"><i class="fab fa-java"></i></div>
+                <h3>Java</h3>
+                <p>Experienced in developing scalable backend solutions, including RESTful APIs and microservices.</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon"><i class="fab fa-php"></i></div>
+                <h3>PHP</h3>
+                <p>Proficient in server-side scripting and integrating with databases.</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <h3>MySQL</h3>
+                <p>Skilled in designing and optimizing relational databases for performance.</p>
+            </div>
+            <div class="skill">
+                <div class="skill-icon"><i class="fab fa-js"></i></div>
+                <h3>Javascript</h3>
+                <p>Strong in frontend scripting and building interactive user interfaces.</p>
+            </div>
+            <div class="skill additional-skill">
+                <div class="skill-icon"><i class="fab fa-github"></i></div>
+                <h3>GitHub</h3>
+                <p>Experienced in version control and collaboration using Git and GitHub.</p>
+            </div>
+            <div class="skill additional-skill">
+                <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+                <h3>C#</h3>
+                <p>Proficient in developing Windows applications and services using C#.</p>
+            </div>
         </div>
-        <div class="skill">
-          <h3>CSS</h3>
-          <div class="skill-bar css">
-            <span>90%</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>Java</h3>
-          <div class="skill-bar java">
-            <span>85%</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>PHP</h3>
-          <div class="skill-bar php">
-            <span>80%</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>MySQL</h3>
-          <div class="skill-bar mysql">
-            <span>80%</span>
-          </div>
-        </div>
-        <div class="skill">
-          <h3>Javascript</h3>
-          <div class="skill-bar javascript">
-            <span>75%</span>
-          </div>
-        </div>
-
-      </div>
+        <button class="view-all-btn" onclick="toggleSkills()">View All</button>
     </div>
-  </section>
+</section>
+
+
+  
 
   <section id="projects" class="projects-section">
     <div class="project-container">
@@ -313,27 +320,24 @@
     });
 
 
-    function sendEmail() {
-      // Collect form data
-      var name = document.querySelector('input[name="name"]').value;
-      var email = document.querySelector('input[name="email"]').value;
-      var message = document.querySelector('textarea[name="message"]').value;
-
-      // Configure SMTPJS
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: "cod4dedsec93@gmail.com",
-        Password: "1234",
-        To: "cod4dedsec93@gmail.com",
-        From: email,
-        Subject: "New Message from " + name,
-        Body: "Name: " + name + "<br>Email: " + email + "<br>Message: " + message,
-      }).then(
-        function (message) {
-          alert("Message sent successfully!");
+    function toggleSkills() {
+    var additionalSkills = document.querySelectorAll('.additional-skill');
+    additionalSkills.forEach(skill => {
+        if (skill.style.display === "none" || skill.style.display === "") {
+            skill.style.display = "block";
+        } else {
+            skill.style.display = "none";
         }
-      );
+    });
+    
+    var button = document.querySelector('.view-all-btn');
+    if (button.innerHTML === "View All") {
+        button.innerHTML = "View Less";
+    } else {
+        button.innerHTML = "View All";
     }
+}
+
 
 
 

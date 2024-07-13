@@ -108,7 +108,7 @@ p {
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	text-decoration: none;
-	color: #0D1730;
+	color: black;
 	text-transform: uppercase;
 	padding: 20px;
 	display: block;
@@ -153,7 +153,7 @@ p {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 3px solid #0D1730;
+	border: 3px solid #9ea9c5;
 	animation: hamburger_puls 1s ease infinite;
 }
 #header .hamburger .bar {
@@ -170,7 +170,7 @@ p {
 	height: 100%;
 	width: 100%;
 	left: 0;
-	background-color: #0D1730;
+	background-color: #8694b8;
 	transition: 0.3s ease;
 	transition-property: top, bottom;
 }
@@ -558,12 +558,12 @@ transition: 0.3s;
     animation-delay: 0.5s;
 }
 
-.skills-title{
-	position: relative;
-    font-size: 4rem;
-    color: #40aa54;
+.skills-title {
+    position: relative;
+    font-size: 2.5rem;
+    color: #333;
     margin-top: 1rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     text-align: center;
 }
 
@@ -584,76 +584,94 @@ transition: 0.3s;
     flex: 1 1 calc(33.33% - 30px);
     margin-bottom: 30px;
     text-align: center;
-    transition: transform 0.6s ease;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .skill:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #40aa54;
 }
 
 .skill h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: #333;
+    margin-bottom: 10px;
 }
 
-.skill-bar {
-    position: relative;
-    background-color: #ddd;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
+.skill p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
 }
 
-.skill-bar span {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 14px;
-    z-index: 1;
+/* Skill specific styles */
+.skill .fab,
+.skill .fas {
+    display: block;
 }
 
-.skill:hover .skill-bar span {
-    z-index: 2;
+.skill .fab {
+    margin-bottom: 5px;
 }
 
-.skill:hover .skill-bar {
-    animation: progress 1s forwards;
+.skill .fa-html5 { color: #e34f26; }
+.skill .fa-css3-alt { color: #1572b6; }
+.skill .fa-java { color: #5382a1; }
+.skill .fa-php { color: #8892bf; }
+.skill .fa-database { color: #00758f; }
+.skill .fa-js { color: #f7df1e; }
+.skill .fa-github { color: #4078c0; }
+.skill .fa-microsoft { color: #0078d7; }
+
+/* Hide additional skills by default */
+.additional-skill {
+    display: none;
 }
 
 
-/* Example skill levels */
-.skill .html {
-    width: 95%;
-    background-color: #E34F26; /* HTML color */
+.view-all-btn {
+	display: inline-block;
+	line-height: 0;
+	padding: 1.6rem 3rem;
+	background: #40aa54;
+	box-shadow: 0px 5px 10px rgba(0, 100, 50, 0.6);
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	margin: 40px auto;
+	display: block;
+	border: none;
+	border-radius: .5em;
+	transition: 0.5s;
+	font-weight: 600;
+	font-size: 1.7rem;
+	font-family: 'Nunito', sans-serif;
 }
 
-.skill .css {
-    width: 90%;
-    background-color: #1572B6; /* CSS color */
-}
-
-.skill .java {
-    width: 85%;
-    background-color: #5382A1; /* Java color */
-}
-
-.skill .php {
-    width: 80%;
-    background-color: #8892BF; /* PHP color */
-}
-
-.skill .mysql {
-    width: 80%;
-    background-color: #00758F; /* MySQL color */
-}
-
-.skill .javascript {
-    width: 75%;
-    background-color: #F7DF1E; /* JavaScript color */
-}
+.view-all-btn i {
+	margin-right: 0.5rem;
+	font-size: 1.5rem;
+	transition: 0.3s;
+  }
+  .view-all-btn:hover{
+	background: #55c466;
+  }
+  .view-all-btn:hover i {
+	transform: translateX(8px);
+  }
+  
 
 
 
@@ -1114,8 +1132,32 @@ transition: 0.3s;
 		text-align: center;
 	}
 
+	.about-content{
+		margin: 0 auto;
+	}
+
+	#header .nav-list ul a {
+		color: white;
+	}
+
+	.contact-container{
+		display: block;
+		text-align: center;
+	}
+	.social-media ul li{
+		margin: 0 auto !important;
+	}
 
 }
+
+@media only screen and (min-width: 768px) {
+
+	.contact-container{
+		padding-left: 4%;
+	}
+
+}
+
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
@@ -1139,6 +1181,6 @@ transition: 0.3s;
 	#header .nav-list ul a:after {
 		display: none;
 	}
-
+	
 }
 /* End  Media Query For Desktop */
