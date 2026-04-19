@@ -468,7 +468,7 @@ body {
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   grid-auto-rows: minmax(80px, 1fr);
-  gap: max(8px, var(--grid-gap));
+  gap: var(--grid-gap);
   padding: 12px 12px 10px;
   width: 100%;
   max-height: calc(100vh - 380px);
@@ -1605,15 +1605,8 @@ textarea.c-input {
 
   .icon-grid {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    gap: 18px;
+    gap: var(--grid-gap);
     padding: 22px 20px 12px;
-  }
-
-  .icon-box {
-    width: 68px;
-    height: 68px;
-    font-size: 30px;
-    border-radius: 20px;
   }
 
   .icon-label {
@@ -1685,15 +1678,8 @@ textarea.c-input {
 @media (min-width: 601px) and (max-width: 1024px) {
   .icon-grid {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    gap: 24px;
+    gap: var(--grid-gap);
     padding: 28px 32px 14px;
-  }
-
-  .icon-box {
-    width: 76px;
-    height: 76px;
-    font-size: 34px;
-    border-radius: 22px;
   }
 
   .icon-label {
