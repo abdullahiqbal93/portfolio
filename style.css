@@ -471,9 +471,10 @@ body {
   gap: var(--grid-gap);
   padding: 12px 12px 10px;
   width: 100%;
-  max-height: calc(100vh - 380px);
+  max-height: calc(100vh - 220px);
   scrollbar-width: none;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .icon-grid::-webkit-scrollbar {
