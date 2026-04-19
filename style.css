@@ -1604,7 +1604,7 @@ textarea.c-input {
   }
 
   .icon-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
     gap: 18px;
     padding: 22px 20px 12px;
   }
@@ -1684,7 +1684,7 @@ textarea.c-input {
 
 @media (min-width: 601px) and (max-width: 1024px) {
   .icon-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
     gap: 24px;
     padding: 28px 32px 14px;
   }
