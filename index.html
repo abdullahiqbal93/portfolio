@@ -1,691 +1,502 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Abdullah · Portfolio" />
-  <meta name="theme-color" content="#05080f" />
-  <title>Abdullah Iqbal · Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Iqbal · Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="desktop-bg"></div>
 
-  <div class="desktop">
-    <div class="side-info">
-      <div class="side-greeting"><span>Developer</span></div>
-      <div class="side-name">Abdullah<br />Iqbal</div>
-      <div class="side-role">
-        Full-Stack Developer &amp;<br /><span>Software Engineer</span>
-      </div>
-      <div class="side-hint">
-        <i class="fas fa-hand-pointer"></i>
-        Tap the icons to explore my portfolio
-      </div>
-      <div class="side-tags">
-        <span class="side-tag">React</span>
-        <span class="side-tag">Node.js</span>
-        <span class="side-tag">Next.js</span>
-        <span class="side-tag">JavaScript</span>
-        <span class="side-tag">PHP</span>
-        <span class="side-tag">Laravel</span>
-        <span class="side-tag">PostgreSQL</span>
-        <span class="side-tag">MySQL</span>
-        <span class="side-tag">MongoDB</span>
+<div id="mobile-warn">
+  <div style="font-size:48px;margin-bottom:8px">🖥️</div>
+  <h2>Desktop Experience Required</h2>
+  <p>This first-person portfolio was designed for a desktop browser with mouse movement. Please visit on a desktop or laptop for the full immersive experience.</p>
+</div>
+
+<div id="cur"></div>
+<div id="dot"></div>
+
+<div id="tip"></div>
+
+<div id="crosshair"></div>
+
+<div id="boot">
+  <div id="boot-name">ABDULLAH IQBAL</div>
+  <div id="boot-lines"></div>
+</div>
+
+<div id="vig"></div>
+
+<div id="lookhint">↕ ↔ Move mouse to look around · Click objects to explore</div>
+
+<div id="dock">
+  <div class="ditem" onclick="open_('about')"><i class="fas fa-user"></i> About</div>
+  <div class="ditem" onclick="open_('projects')"><i class="fas fa-laptop-code"></i> Projects</div>
+  <div class="ditem" onclick="open_('skills')"><i class="fas fa-code"></i> Skills</div>
+  <div class="ditem" onclick="open_('exp')"><i class="fas fa-briefcase"></i> Experience</div>
+  <div class="ditem" onclick="open_('contact')"><i class="fas fa-envelope"></i> Contact</div>
+</div>
+
+<div id="scene">
+
+<div class="lyr" id="lyr-wall" data-d="0.08">
+  <div id="ceiling"></div>
+  <div id="floor-dark"></div>
+  <div id="wall-glow"></div>
+  <div id="mon-glow-l"></div>
+  <div id="mon-glow-r"></div>
+</div>
+
+<div class="lyr" id="lyr-far" data-d="0.15">
+  <div id="win" onclick="toggleWeather()">
+    <div id="win-sky"></div>
+    <div id="win-city"></div>
+    <div id="win-h"></div>
+    <div id="win-v"></div>
+    <div id="lightning-flash"></div>
+  </div>
+</div>
+
+<div class="lyr" id="lyr-mid" data-d="0.3">
+
+  <div id="wb" onclick="open_('skills')" title="Skills Board">
+    <div id="wb-inner">
+      <h3>✦ Tech Stack</h3>
+      <div class="wrow"><div class="wdot" style="background:#2266cc"></div><span>React / Next.js</span></div>
+      <div class="wrow"><div class="wdot" style="background:#339900"></div><span>Node.js / Express</span></div>
+      <div class="wrow"><div class="wdot" style="background:#cc4400"></div><span>PHP / Laravel</span></div>
+      <div class="wrow"><div class="wdot" style="background:#aa0000"></div><span>Java</span></div>
+      <div class="wrow"><div class="wdot" style="background:#7700aa"></div><span>C# / .NET</span></div>
+      <div class="wrow"><div class="wdot" style="background:#005599"></div><span>PostgreSQL / MySQL</span></div>
+      <div class="wrow"><div class="wdot" style="background:#006633"></div><span>MongoDB</span></div>
+      <div class="wrow"><div class="wdot" style="background:#004499"></div><span>TypeScript</span></div>
+      <div class="wrow"><div class="wdot" style="background:#888800"></div><span>Tailwind / SCSS</span></div>
+    </div>
+    <div class="wb-click">↑ click to see all skills</div>
+    <div class="hlabel">📋 Click — View All Skills</div>
+  </div>
+
+  <div id="shelf">
+    <div class="book" style="background:#4a1a1a">Clean Code</div>
+    <div class="shelf-plank"></div>
+    <div class="book" style="background:#1a3a4a">React Docs</div>
+    <div class="book" style="background:#1a4a1a">Node.js</div>
+    <div class="shelf-plank"></div>
+    <div class="book" style="background:#3a2a1a">SQL Guide</div>
+    <div class="book" style="background:#2a1a4a">TypeScript</div>
+    <div class="book" style="background:#1a1a4a">Laravel</div>
+  </div>
+</div>
+
+<div class="lyr" id="lyr-mon" data-d="0.55">
+
+  <div class="monwrap" id="monL" onclick="open_('about')" title="About Me">
+    <div class="mouter">
+      <div class="mscreen" id="scr-a">
+        <div class="scr-prompt">PROFILE.SH — RUNNING</div>
+        <div class="scr-h">Abdullah Iqbal</div>
+        <div class="scr-sub">
+          Full Stack Developer<br>
+          Colombo, Sri Lanka 🇱🇰<br>
+          <span style="color:var(--mon-green)">● Available for hire</span>
+        </div>
+        <div class="scr-card">
+          <div style="color:var(--dim);font-size:.8em">CURRENT STUDY</div>
+          BSc (Hons) Software Engineering<br>
+          Cardiff Metropolitan University
+          <div><span class="stag">2025 → 2026</span></div>
+        </div>
+        <div class="scr-card">
+          <div style="color:var(--dim);font-size:.8em">WORKING AT</div>
+          Saberion Pvt Ltd<br>
+          On-Site Internship
+          <div><span class="stag">May 2025 → present</span></div>
+        </div>
+        <div style="margin-top:auto;font-family:'Space Mono',monospace;font-size:clamp(3px,.45vw,6px);color:rgba(255,255,255,.18);text-align:center">[ click to read more ]</div>
       </div>
     </div>
+    <div class="mneck"></div>
+    <div class="mbase"></div>
+    <div class="hlabel">👤 About Me</div>
+  </div>
 
-    <div class="phone-wrap">
-      <div class="phone">
-        <div class="screen">
-          <div class="wallpaper"></div>
-
-          <div class="dynamic-island">
-            <div class="cam-dot"></div>
-          </div>
-
-          <div class="status-bar">
-            <span class="s-time" id="clock">--:--</span>
-            <div class="s-icons">
-              <i class="fas fa-signal"></i>
-              <i class="fas fa-wifi"></i>
-              <div class="bat">
-                <div class="bat-body">
-                  <div class="bat-fill"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="home" id="homeScreen">
-            <div class="home-head">
-              <div class="home-date" id="homeDate"></div>
-              <div class="home-hi">Hello, World! 👋</div>
-              <div class="home-sub">
-                Abdullah Iqbal · Full-Stack Developer
-              </div>
-            </div>
-
-            <div class="icon-grid" id="iconGrid">
-              <div class="app-icon" draggable="true" data-app-id="about" onclick="openApp('about')">
-                <div class="icon-box ic-about"><i class="fas fa-user"></i></div>
-                <span class="icon-label">About</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="projects" onclick="openApp('projects')">
-                <div class="icon-box ic-projects">
-                  <i class="fas fa-briefcase"></i>
-                  <div class="badge">6</div>
-                </div>
-                <span class="icon-label">Projects</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="skills" onclick="openApp('skills')">
-                <div class="icon-box ic-skills"><i class="fas fa-bolt"></i></div>
-                <span class="icon-label">Skills</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="education" onclick="openApp('education')">
-                <div class="icon-box ic-education"><i class="fas fa-graduation-cap"></i></div>
-                <span class="icon-label">Education</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="experience" onclick="openApp('experience')">
-                <div class="icon-box ic-exp"><i class="fas fa-building"></i></div>
-                <span class="icon-label">Experience</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="contact" onclick="openApp('contact')">
-                <div class="icon-box ic-contact"><i class="fas fa-envelope"></i></div>
-                <span class="icon-label">Contact</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="resume" onclick="window.open('resume.pdf', '_blank')">
-                <div class="icon-box ic-resume"><i class="fas fa-file"></i></div>
-                <span class="icon-label">Resume</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="github"
-                onclick="window.open('https://github.com/abdullahiqbal93', '_blank')">
-                <div class="icon-box ic-github">
-                  <i class="fab fa-github" style="color: #fff; font-size: 30px"></i>
-                </div>
-                <span class="icon-label">GitHub</span>
-              </div>
-
-              <div class="app-icon" draggable="true" data-app-id="settings" onclick="openApp('settings')">
-                <div class="icon-box ic-settings"><i class="fas fa-sliders-h"></i></div>
-                <span class="icon-label">Settings</span>
-              </div>
-            </div>
-
-            <div class="dock">
-              <div class="dock-icon ic-about" onclick="openApp('about')">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class="dock-icon ic-projects" onclick="openApp('projects')">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <div class="dock-icon ic-contact" onclick="openApp('contact')">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="dock-icon ic-settings" onclick="openApp('settings')">
-                <i class="fas fa-sliders-h"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-about" id="app-about">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('about')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">About</span>
-            </div>
-            <div class="a-body">
-              <div class="ab-hero">
-                <div class="ab-avatar">👨‍💻</div>
-                <div class="ab-name">Abdullah Iqbal</div>
-                <div class="ab-role">Full-Stack Developer</div>
-                <p class="ab-bio">
-                  Full-stack developer building web applications with modern
-                  technologies. Experience with front-end and back-end development
-                  to create responsive interfaces and robust server-side logic.
-                </p>
-              </div>
-
-              <div class="info-grid">
-                <div class="info-tile">
-                  <div class="emoji">📍</div>
-                  <div class="lbl">Location</div>
-                  <div class="val">Dehiwala, Sri Lanka</div>
-                </div>
-                <div class="info-tile">
-                  <div class="emoji">🎓</div>
-                  <div class="lbl">Degree</div>
-                  <div class="val">BSc Software Engineering</div>
-                </div>
-                <div class="info-tile">
-                  <div class="emoji">📧</div>
-                  <div class="lbl">Email</div>
-                  <div class="val" style="font-size: 11px">
-                    mohamedabdullah93@gmail.com
-                  </div>
-                </div>
-                <div class="info-tile">
-                  <div class="emoji">📱</div>
-                  <div class="lbl">Phone</div>
-                  <div class="val">+94 77 944 5929</div>
-                </div>
-                <div class="info-tile">
-                  <div class="emoji">🌐</div>
-                  <div class="lbl">LinkedIn</div>
-                  <div class="val" style="font-size: 11px">
-                    muhammed-abdullah
-                  </div>
-                </div>
-                <div class="info-tile">
-                  <div class="emoji">💬</div>
-                  <div class="lbl">Discord</div>
-                  <div class="val">dedsec0379</div>
-                </div>
-              </div>
-
-              <a href="resume.pdf" download="Abdullah_Iqbal_resume.pdf" class="cv-btn">
-                <i class="fas fa-download"></i> Download CV
-              </a>
-
-              <div class="scroll-hint" style="margin-top: 12px">
-                ↓ scroll for more
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-projects" id="app-projects">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('projects')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Projects</span>
-            </div>
-            <div class="a-body">
-              <div class="proj-card">
-                <div class="proj-badge">🤖 AI · PWA</div>
-                <div class="proj-name">
-                  AI-Driven Personal Finance Management System
-                </div>
-                <div class="proj-tech">
-                  Node.js · React · PostgreSQL · Sequelize · Tailwind CSS
-                </div>
-                <div class="proj-desc">
-                  Full-stack cloud-deployed PWA with AI-driven
-                  auto-categorization, receipt scanning, anomaly detection,
-                  and a financial chat assistant. Secure REST APIs with RBAC
-                  &amp; CSRF protection.
-                </div>
-                <a href="https://pfm-hub.vercel.app" class="proj-link" target="_blank"><i
-                    class="fas fa-external-link-alt"></i> View Live</a>
-              </div>
-
-              <div class="proj-card">
-                <div class="proj-badge">📦 Open Source</div>
-                <div class="proj-name">Laravel Auto Seeder Package</div>
-                <div class="proj-tech">
-                  Laravel · PHP · MySQL · PostgreSQL · SQLite · SQL Server
-                </div>
-                <div class="proj-desc">
-                  Laravel package for generating fake data by analyzing models,
-                  migrations and relationships with schema analysis and type-aware
-                  generation.
-                </div>
-                <a href="https://packagist.org/packages/dedsec/laravel-autoseeder" class="proj-link" target="_blank"><i
-                    class="fas fa-external-link-alt"></i> Packagist</a>
-              </div>
-
-              <div class="proj-card">
-                <div class="proj-badge">🛍️ E-Commerce</div>
-                <div class="proj-name">
-                  Flexxy E-commerce Platform
-                </div>
-                <div class="proj-tech">
-                  React · Vite · Redux Toolkit · Node.js · Express.js · JWT ·
-                  RSA
-                </div>
-                <div class="proj-desc">
-                  Full-stack e-commerce with modern UI/UX, secure auth,
-                  product &amp; order management, and PayPal payment
-                  integration.
-                </div>
-                <a href="https://flexxy-cloathing-store-app.vercel.app" class="proj-link" target="_blank"><i
-                    class="fas fa-external-link-alt"></i> View Live</a>
-              </div>
-
-              <div class="proj-card">
-                <div class="proj-badge">♿ Accessibility</div>
-                <div class="proj-name">
-                  GazeType Eye-Controlled Keyboard
-                </div>
-                <div class="proj-tech">
-                  Next.js · MediaPipe Face Mesh · Tailwind CSS
-                </div>
-                <div class="proj-desc">
-                  Eye-controlled typing using webcam-based gaze tracking without
-                  special hardware. Accessible keyboard with built-in text-to-speech.
-                </div>
-                <a href="https://github.com/abdullahiqbal93/GazeType" class="proj-link" target="_blank"><i
-                    class="fab fa-github"></i> GitHub</a>
-              </div>
-
-              <div class="proj-card">
-                <div class="proj-badge">💪 Web App</div>
-                <div class="proj-name">GYM Management System</div>
-                <div class="proj-tech">
-                  PHP · MySQL · HTML · CSS · JavaScript
-                </div>
-                <div class="proj-desc">
-                  Web app for managing gym memberships, scheduling classes,
-                  and tracking member progress.
-                </div>
-                <a href="https://github.com/abdullahiqbal93/Gym-Management-System" class="proj-link" target="_blank"><i
-                    class="fab fa-github"></i> GitHub</a>
-              </div>
-
-              <div class="proj-card">
-                <div class="proj-badge">🏢 Enterprise</div>
-                <div class="proj-name">ERP System</div>
-                <div class="proj-tech">
-                  PHP · MySQL · HTML · CSS · JavaScript
-                </div>
-                <div class="proj-desc">
-                  Enterprise resource planning app for managing customer data,
-                  item inventory, and generating comprehensive business
-                  reports.
-                </div>
-                <a href="https://github.com/abdullahiqbal93/ERP-System" class="proj-link" target="_blank"><i
-                    class="fab fa-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-skills" id="app-skills">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('skills')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Skills</span>
-            </div>
-            <div class="a-body">
-              <div class="sk-cat">
-                <div class="sk-cat-title">Frontend</div>
-                <div class="chips">
-                  <div class="chip"><i class="fab fa-html5"></i> HTML5</div>
-                  <div class="chip"><i class="fab fa-css3-alt"></i> CSS3</div>
-                  <div class="chip"><i class="fab fa-js"></i> JavaScript</div>
-                  <div class="chip"><i class="fab fa-react"></i> React</div>
-                  <div class="chip"><i class="fab fa-react"></i> Next.js</div>
-                  <div class="chip"><i class="fas fa-wind"></i> Tailwind</div>
-                  <div class="chip"><i class="fab fa-sass"></i> SCSS</div>
-                  <div class="chip"><i class="fas fa-layer-group"></i> Redux</div>
-                  <div class="chip"><i class="fab fa-bootstrap"></i> Bootstrap</div>
-                </div>
-              </div>
-
-              <div class="sk-cat">
-                <div class="sk-cat-title">Backend</div>
-                <div class="chips">
-                  <div class="chip">
-                    <i class="fab fa-node-js"></i> Node.js
-                  </div>
-                  <div class="chip">
-                    <i class="fab fa-node-js"></i> Express.js
-                  </div>
-                  <div class="chip"><i class="fab fa-php"></i> PHP</div>
-                  <div class="chip">
-                    <i class="fab fa-laravel"></i> Laravel
-                  </div>
-                  <div class="chip"><i class="fab fa-java"></i> Java</div>
-                </div>
-              </div>
-
-              <div class="sk-cat">
-                <div class="sk-cat-title">Database</div>
-                <div class="chips">
-                  <div class="chip">
-                    <i class="fas fa-database"></i> PostgreSQL
-                  </div>
-                  <div class="chip">
-                    <i class="fas fa-database"></i> MySQL
-                  </div>
-                  <div class="chip"><i class="fas fa-leaf"></i> MongoDB</div>
-                  <div class="chip">
-                    <i class="fas fa-database"></i> SQLite
-                  </div>
-                  <div class="chip">
-                    <i class="fas fa-server"></i> Sequelize
-                  </div>
-                  <div class="chip"><i class="fas fa-leaf"></i> Eloquent ORM</div>
-                  <div class="chip"><i class="fas fa-fire"></i> Firebase</div>
-                </div>
-              </div>
-
-              <div class="sk-cat">
-                <div class="sk-cat-title">Languages</div>
-                <div class="chips">
-                  <div class="chip">
-                    <i class="fas fa-code"></i> TypeScript
-                  </div>
-                  <div class="chip"><i class="fab fa-js"></i> JavaScript</div>
-                  <div class="chip"><i class="fab fa-java"></i> Java</div>
-                  <div class="chip"><i class="fab fa-php"></i> PHP</div>
-                </div>
-              </div>
-
-              <div class="sk-cat">
-                <div class="sk-cat-title">Tools &amp; DevOps</div>
-                <div class="chips">
-                  <div class="chip"><i class="fab fa-github"></i> GitHub</div>
-                  <div class="chip">
-                    <i class="fas fa-code-branch"></i> Git
-                  </div>
-                  <div class="chip"><i class="fab fa-bitbucket"></i> Bitbucket</div>
-                  <div class="chip"><i class="fab fa-docker"></i> Docker</div>
-                  <div class="chip"><i class="fas fa-cloud"></i> Vercel</div>
-                  <div class="chip"><i class="fab fa-aws"></i> AWS</div>
-                  <div class="chip">
-                    <i class="fas fa-server"></i> REST APIs
-                  </div>
-                  <div class="chip">
-                    <i class="fas fa-lock"></i> JWT / RSA
-                  </div>
-                  <div class="chip"><i class="fas fa-folder"></i> FileZilla</div>
-                  <div class="chip"><i class="fas fa-terminal"></i> PuTTY</div>
-                </div>
-              </div>
-
-              <div class="sk-cat">
-                <div class="sk-cat-title">Methodologies &amp; Paradigms</div>
-                <div class="chips">
-                  <div class="chip"><i class="fas fa-cube"></i> OOP</div>
-                  <div class="chip"><i class="fas fa-layer-group"></i> MVC</div>
-                  <div class="chip"><i class="fas fa-person-hiking"></i> Agile</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-education" id="app-education">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('education')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Education</span>
-            </div>
-            <div class="a-body">
-              <div class="tl-item">
-                <div class="tl-left">
-                  <div class="tl-dot"></div>
-                  <div class="tl-line"></div>
-                </div>
-                <div class="tl-card">
-                  <div class="tl-inst">Al-Azhar College</div>
-                  <div class="tl-deg">GCE Advanced Level</div>
-                  <div class="tl-date">April 2018 – Oct 2020</div>
-                </div>
-              </div>
-
-              <div class="tl-item">
-                <div class="tl-left">
-                  <div class="tl-dot"></div>
-                  <div class="tl-line"></div>
-                </div>
-                <div class="tl-card">
-                  <div class="tl-inst">UOM Open Learning Platform</div>
-                  <div class="tl-deg">Web Developer · Beginner</div>
-                  <div class="tl-date">March 2021 – April 2021</div>
-                </div>
-              </div>
-
-              <div class="tl-item">
-                <div class="tl-left">
-                  <div class="tl-dot"></div>
-                  <div class="tl-line"></div>
-                </div>
-                <div class="tl-card">
-                  <div class="tl-inst">SLIATE</div>
-                  <div class="tl-deg">HND in Information Technology</div>
-                  <div class="tl-date">March 2021 – Oct 2024</div>
-                </div>
-              </div>
-
-              <div class="tl-item">
-                <div class="tl-left">
-                  <div class="tl-dot" style="
-                        background: var(--accent-blue);
-                        box-shadow: 0 0 12px rgba(79, 156, 249, 0.6);
-                      "></div>
-                </div>
-                <div class="tl-card" style="
-                      border-color: rgba(79, 156, 249, 0.3);
-                      background: rgba(79, 156, 249, 0.06);
-                    ">
-                  <div class="tl-inst">Cardiff Metropolitan University</div>
-                  <div class="tl-deg" style="color: var(--accent-blue)">
-                    BSc (Hons) Software Engineering
-                  </div>
-                  <div class="tl-date">May 2025 – Mar 2026</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-experience" id="app-experience">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('experience')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Experience</span>
-            </div>
-            <div class="a-body">
-              <div class="exp-card">
-                <div class="exp-role">Software Developer Intern</div>
-                <div class="exp-company">Dottech Softwares Pvt Ltd</div>
-                <div class="exp-period">Aug 2024 – Feb 2025</div>
-                <span class="exp-tag">Remote Internship</span>
-              </div>
-
-              <div class="exp-card">
-                <div class="exp-role">Software Developer Intern</div>
-                <div class="exp-company">Saberion Pvt Ltd</div>
-                <div class="exp-period">May 2025 – April 2026</div>
-                <span class="exp-tag current">🟢 On-Site</span>
-              </div>
-
-              <div class="s-label">Freelance</div>
-
-              <div class="exp-card">
-                <div class="exp-role">Full-Stack Developer</div>
-                <div class="exp-company">Freelance Projects</div>
-                <div class="exp-period">2023 – Present</div>
-                <span class="exp-tag">Remote</span>
-              </div>
-
-              <div class="s-label">Open Source</div>
-
-              <div class="oss-card">
-                <div class="oss-label">Published Package</div>
-                <div class="exp-role">Laravel Package Author</div>
-                <div class="exp-company" style="color: var(--accent-blue)">
-                  dedsec/laravel-autoseeder
-                </div>
-                <div class="exp-period">Published on Packagist · 2024</div>
-                <a href="https://packagist.org/packages/dedsec/laravel-autoseeder" target="_blank" class="oss-link">
-                  <i class="fas fa-external-link-alt"></i> View on Packagist
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-contact" id="app-contact">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('contact')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Contact</span>
-            </div>
-            <div class="a-body">
-              <a href="tel:+94779445929" class="c-link">
-                <div class="c-icon" style="background: rgba(79, 156, 249, 0.12)">
-                  📱
-                </div>
-                <div class="c-info">
-                  <div class="c-type">Phone</div>
-                  <div class="c-val">+94 77 944 5929</div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <a href="mailto:mohamedabdullah93@gmail.com" class="c-link">
-                <div class="c-icon" style="background: rgba(244, 114, 182, 0.12)">
-                  ✉️
-                </div>
-                <div class="c-info">
-                  <div class="c-type">Email</div>
-                  <div class="c-val" style="font-size: 12px">
-                    mohamedabdullah93@gmail.com
-                  </div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <a href="https://www.linkedin.com/in/muhammed-abdullah-a13841300/" target="_blank" class="c-link">
-                <div class="c-icon" style="background: rgba(10, 102, 194, 0.15)">
-                  <i class="fab fa-linkedin" style="color: #0a66c2; font-size: 20px"></i>
-                </div>
-                <div class="c-info">
-                  <div class="c-type">LinkedIn</div>
-                  <div class="c-val">Muhammed Abdullah</div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <a href="https://github.com/abdullahiqbal93" target="_blank" class="c-link">
-                <div class="c-icon" style="background: rgba(255, 255, 255, 0.07)">
-                  <i class="fab fa-github" style="color: #fff; font-size: 20px"></i>
-                </div>
-                <div class="c-info">
-                  <div class="c-type">GitHub</div>
-                  <div class="c-val">abdullahiqbal93</div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <a href="https://discordapp.com/users/dedsec0379" target="_blank" class="c-link">
-                <div class="c-icon" style="background: rgba(88, 101, 242, 0.15)">
-                  <i class="fab fa-discord" style="color: #5865f2; font-size: 20px"></i>
-                </div>
-                <div class="c-info">
-                  <div class="c-type">Discord</div>
-                  <div class="c-val">dedsec0379</div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <a href="https://packagist.org/packages/dedsec/laravel-autoseeder" target="_blank" class="c-link">
-                <div class="c-icon" style="background: rgba(255, 107, 53, 0.12)">
-                  🎁
-                </div>
-                <div class="c-info">
-                  <div class="c-type">Open Source</div>
-                  <div class="c-val" style="font-size: 12px">
-                    dedsec/laravel-autoseeder
-                  </div>
-                </div>
-                <i class="fas fa-chevron-right c-arr"></i>
-              </a>
-
-              <div class="form-section">
-                <div class="form-title">Send a Message 💬</div>
-                <input type="text" class="c-input" id="f-name" placeholder="Your Name" />
-                <textarea class="c-input" id="f-msg" placeholder="Your Message"></textarea>
-                <button class="send-btn" onclick="sendViaWhatsApp()">
-                  <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="app-screen app-settings" id="app-settings">
-            <div class="a-header">
-              <button class="a-back" onclick="closeApp('settings')">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="a-title">Settings</span>
-            </div>
-            <div class="a-body">
-              <div class="settings-section">
-                <div class="settings-title">Grid Layout</div>
-                <div class="settings-option">
-                  <label>Columns</label>
-                  <div class="grid-preset-buttons">
-                    <button class="grid-preset-btn" onclick="setGridSize(3)">3×4</button>
-                    <button class="grid-preset-btn active" onclick="setGridSize(4)">4×4</button>
-                    <button class="grid-preset-btn" onclick="setGridSize(5)">5×4</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="settings-section">
-                <div class="settings-title">Icon Size</div>
-                <div class="settings-option">
-                  <div class="slider-container">
-                    <span class="slider-label">Small</span>
-                    <input type="range" id="iconSizeSlider" min="48" max="80" value="64" class="settings-slider"
-                      oninput="setIconSize(this.value)">
-                    <span class="slider-label">Large</span>
-                  </div>
-                  <div class="current-value">Size: <span id="iconSizeValue">64</span>px</div>
-                </div>
-              </div>
-
-              <div class="settings-section">
-                <div class="settings-title">Grid Spacing</div>
-                <div class="settings-option">
-                  <div class="slider-container">
-                    <span class="slider-label">Tight</span>
-                    <input type="range" id="gridSpacingSlider" min="8" max="24" value="14" class="settings-slider"
-                      oninput="setGridSpacing(this.value)">
-                    <span class="slider-label">Wide</span>
-                  </div>
-                  <div class="current-value">Spacing: <span id="gridSpacingValue">14</span>px</div>
-                </div>
-              </div>
-
-
-
-              <div class="settings-section">
-                <button class="reset-settings-btn" onclick="resetSettings()">
-                  <i class="fas fa-redo"></i> Reset to Default
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="home-ind"></div>
+  <div class="monwrap" id="monR" onclick="open_('projects')" title="My Projects">
+    <div class="mouter">
+      <div class="mscreen" id="scr-p">
+        <div class="scr-prompt" style="color:var(--mon-blue)">~/projects — ls -la</div>
+        <div class="scr-title">Recent Builds</div>
+        <div class="scr-proj">
+          AI Finance PWA (Full-Stack)
+          <span><span class="stag">React</span> <span class="stag">Node.js</span> <span class="stag">PostgreSQL</span></span>
         </div>
+        <div class="scr-proj">
+          Laravel Auto Seeder (Open Source)
+          <span><span class="stag">Laravel</span> <span class="stag">PHP</span> <span class="stag">Packagist</span></span>
+        </div>
+        <div class="scr-proj">
+          Flexxy — E-Commerce Platform
+          <span><span class="stag">React</span> <span class="stag">Redux</span> <span class="stag">JWT/RSA</span></span>
+        </div>
+        <div class="scr-proj">
+          GazeType — Eye-Controlled Keyboard
+          <span><span class="stag">Next.js</span> <span class="stag">MediaPipe</span></span>
+        </div>
+        <div style="margin-top:auto;font-family:'Space Mono',monospace;font-size:clamp(3px,.45vw,6px);color:rgba(255,255,255,.18);text-align:center">[ click monitor to view all ]</div>
+      </div>
+    </div>
+    <div class="mneck"></div>
+    <div class="mbase"></div>
+    <div class="hlabel">💻 View Projects</div>
+  </div>
+
+</div>
+
+<div class="lyr" id="lyr-desk" data-d="0.75">
+
+  <div id="desk-srf"></div>
+  <div id="desk-front"></div>
+
+  <div id="lamp" onclick="toggleDayNight()" title="Toggle Day / Night Mode">
+    <div id="lamp-stem"></div>
+    <div id="lamp-head"></div>
+    <div id="lamp-base"></div>
+  </div>
+  <div id="lamp-cone"></div>
+
+  <div id="mug" onclick="open_('egg')" title="Secret ☕">
+    <div id="mug-steam">
+      <span class="sm"></span><span class="sm"></span><span class="sm"></span>
+    </div>
+    <div id="mug-body"><div class="mug-top"></div></div>
+    <div class="hlabel">☕ Coffee ?</div>
+  </div>
+
+  <div id="radio-player" onclick="toggleRadio()" title="Lo-Fi Vibes">
+    <div class="r-speaker">
+      <div class="r-anim" id="r-anim">
+        <div class="r-bar"></div>
+        <div class="r-bar"></div>
+        <div class="r-bar"></div>
+      </div>
+    </div>
+    <div class="r-dials">
+      <div class="r-dial" style="transform:rotate(20deg)"></div>
+      <div class="r-dial" style="transform:rotate(-45deg)"></div>
+    </div>
+    <div class="hlabel">📻 Lo-Fi Radio</div>
+  </div>
+
+  <div id="stickies" onclick="open_('contact')" title="Contact Me">
+    <div class="stick sy">📞<br>+94 77<br>944 5929</div>
+    <div class="stick sp">✉️<br>moham<br>edabdu<br>llah93@<br>gmail</div>
+    <div class="stick sg">📍<br>Dehiwala<br>Sri Lanka</div>
+    <div class="hlabel">📬 Contact Me</div>
+  </div>
+
+  <div id="notepad">
+    <div class="ntext">TODO:<br>Ship more<br>projects ✓</div>
+    <div class="nline"></div>
+    <div class="nline"></div>
+    <div class="nline"></div>
+    <div class="ntext" style="color:#888;font-size:clamp(4px,.5vw,7px)">- learn Rust?<br>- coffee ✓</div>
+  </div>
+
+</div>
+
+<div class="lyr" id="lyr-kb" data-d="1.0">
+  <div id="kb-wrap">
+    <div id="kb">
+      <div class="kbrow">
+        <div class="k w2">esc</div>
+        <div class="k">F1</div><div class="k">F2</div><div class="k">F3</div><div class="k">F4</div>
+        <div class="k">F5</div><div class="k">F6</div><div class="k">F7</div><div class="k">F8</div>
+        <div class="k">F9</div><div class="k">F10</div><div class="k">F11</div><div class="k">F12</div>
+      </div>
+      <div class="kbrow">
+        <div class="k">`</div>
+        <div class="k">1</div><div class="k">2</div><div class="k">3</div><div class="k">4</div>
+        <div class="k">5</div><div class="k">6</div><div class="k">7</div><div class="k">8</div>
+        <div class="k">9</div><div class="k">0</div><div class="k">-</div><div class="k">=</div>
+        <div class="k w2">⌫</div>
+      </div>
+      <div class="kbrow">
+        <div class="k w2">tab</div>
+        <div class="k" id="kQ">Q</div><div class="k">W</div><div class="k" id="kE">E</div><div class="k">R</div>
+        <div class="k">T</div><div class="k">Y</div><div class="k">U</div><div class="k">I</div>
+        <div class="k">O</div><div class="k">P</div><div class="k">[</div><div class="k">]</div>
+        <div class="k w2">\</div>
+      </div>
+      <div class="kbrow">
+        <div class="k w2">caps</div>
+        <div class="k" id="kA">A</div><div class="k" id="kS">S</div><div class="k">D</div><div class="k">F</div>
+        <div class="k">G</div><div class="k">H</div><div class="k">J</div><div class="k">K</div>
+        <div class="k">L</div><div class="k">;</div><div class="k">'</div>
+        <div class="k w3">↵</div>
+      </div>
+      <div class="kbrow">
+        <div class="k w3">shift</div>
+        <div class="k">Z</div><div class="k">X</div><div class="k">C</div><div class="k">V</div>
+        <div class="k" id="kB">B</div><div class="k" id="kN">N</div><div class="k">M</div>
+        <div class="k">,</div><div class="k">.</div><div class="k">/</div>
+        <div class="k w3">shift</div>
+      </div>
+      <div class="kbrow">
+        <div class="k w2">ctrl</div><div class="k">⌘</div><div class="k w3">alt</div>
+        <div class="k spc">SPACE</div>
+        <div class="k w3">alt</div><div class="k">⌘</div><div class="k w2">ctrl</div>
       </div>
     </div>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<div class="lyr" id="lyr-hands" data-d="0.05">
+  <div id="hands">
+    <!-- LEFT HAND -->
+    <svg class="hnd" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sleeve -->
+      <rect x="20" y="170" width="140" height="55" rx="22" fill="#18182e"/>
+      <!-- Wrist skin -->
+      <rect x="30" y="145" width="120" height="40" rx="18" fill="#c8a07a"/>
+      <!-- Palm -->
+      <rect x="18" y="92" width="144" height="72" rx="18" fill="#d4ac88"/>
+      <!-- Pinky -->
+      <rect x="20" y="42" width="24" height="62" rx="12" fill="#d4ac88"/>
+      <!-- Ring -->
+      <rect x="50" y="25" width="26" height="76" rx="13" fill="#d4ac88"/>
+      <!-- Middle -->
+      <rect x="82" y="16" width="26" height="85" rx="13" fill="#d4ac88"/>
+      <!-- Index -->
+      <rect x="114" y="28" width="26" height="73" rx="13" fill="#d4ac88"/>
+      <!-- Thumb -->
+      <ellipse cx="164" cy="118" rx="17" ry="34" fill="#d4ac88" transform="rotate(-28 164 118)"/>
+      <!-- Knuckle shading -->
+      <ellipse cx="32" cy="94" rx="10" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="63" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="95" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="127" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <!-- Nail hints -->
+      <rect x="24" y="43" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="55" y="26" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="87" y="17" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="119" y="29" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+    </svg>
+    <!-- RIGHT HAND (mirror) -->
+    <svg class="hnd" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg" style="transform:scaleX(-1)">
+      <rect x="20" y="170" width="140" height="55" rx="22" fill="#18182e"/>
+      <rect x="30" y="145" width="120" height="40" rx="18" fill="#c8a07a"/>
+      <rect x="18" y="92" width="144" height="72" rx="18" fill="#d4ac88"/>
+      <rect x="20" y="42" width="24" height="62" rx="12" fill="#d4ac88"/>
+      <rect x="50" y="25" width="26" height="76" rx="13" fill="#d4ac88"/>
+      <rect x="82" y="16" width="26" height="85" rx="13" fill="#d4ac88"/>
+      <rect x="114" y="28" width="26" height="73" rx="13" fill="#d4ac88"/>
+      <ellipse cx="164" cy="118" rx="17" ry="34" fill="#d4ac88" transform="rotate(-28 164 118)"/>
+      <ellipse cx="32" cy="94" rx="10" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="63" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="95" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <ellipse cx="127" cy="94" rx="11" ry="5" fill="rgba(160,100,50,.25)"/>
+      <rect x="24" y="43" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="55" y="26" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="87" y="17" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+      <rect x="119" y="29" width="16" height="10" rx="5" fill="rgba(255,220,180,.4)"/>
+    </svg>
+  </div>
+</div>
+
+</div>
+
+
+<div class="ovl" id="ovl-about">
+<div class="opanel">
+  <button class="ocls" onclick="close_('about')">✕</button>
+  <div class="otag">about_me.js</div>
+  <div class="ohead">I'm Abdullah.</div>
+  <div class="agrid">
+    <div>
+      <div class="aavatar">🧑‍💻</div>
+      <div class="alinks">
+        <a class="alink" href="https://github.com/abdullahiqbal93" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+        <a class="alink" href="https://www.linkedin.com/in/muhammed-abdullah-a13841300/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+        <a class="alink" href="https://discordapp.com/users/dedsec0379" target="_blank"><i class="fab fa-discord"></i>dedsec0379</a>
+      </div>
+      <div style="margin-top:14px">
+        <a class="abtn" href="resume.pdf" download>
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+    </div>
+    <div class="abio">
+      <p>Hello! I'm a dedicated <strong>full-stack developer</strong> with a passion for crafting high-quality web applications. I enjoy working with both front-end and back-end technologies to create seamless user experiences.</p>
+      <p>From designing responsive interfaces to implementing robust server-side logic, I love every aspect of the development process. Currently pursuing my <strong>BSc in Software Engineering</strong> at Cardiff Metropolitan University while interning at <strong>Saberion Pvt Ltd</strong>.</p>
+      <p>Based in <strong>Colombo, Sri Lanka 🇱🇰</strong> — open to new opportunities worldwide. Let's collaborate and bring your ideas to life!</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
+        <button class="abtn" onclick="close_('about');open_('exp')"><i class="fas fa-timeline"></i> My Journey</button>
+        <button class="abtn" onclick="close_('about');open_('contact')"><i class="fas fa-envelope"></i> Get In Touch</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="ovl" id="ovl-projects">
+<div class="opanel">
+  <button class="ocls" onclick="close_('projects')">✕</button>
+  <div class="otag">projects/ — ls -la</div>
+  <div class="ohead">What I've Built.</div>
+  <div class="pgrid">
+    <div class="pcard">
+      <h3>AI-Driven Personal Finance PWA</h3>
+      <p>Full-stack cloud-deployed Progressive Web App with auto-categorization, receipt scanning, anomaly detection, and an AI financial chat assistant. Secure REST APIs with RBAC & CSRF.</p>
+      <div class="ttags"><span class="tt">React</span><span class="tt">Node.js</span><span class="tt">PostgreSQL</span><span class="tt">Tailwind</span></div>
+      <a class="plink" href="https://pfm-hub.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i> View Live</a>
+    </div>
+    <div class="pcard">
+      <h3>Laravel Auto Seeder <span style="color:var(--lamp-warm);font-size:10px">Open Source</span></h3>
+      <p>Laravel package that auto-generates realistic fake data by analyzing models, migrations, and relationships. Type-aware data generation with constraint validation.</p>
+      <div class="ttags"><span class="tt">Laravel</span><span class="tt">PHP</span><span class="tt">MySQL</span><span class="tt">PostgreSQL</span></div>
+      <a class="plink" href="https://packagist.org/packages/dedsec/laravel-autoseeder" target="_blank"><i class="fas fa-external-link-alt"></i> Packagist</a>
+    </div>
+    <div class="pcard">
+      <h3>Flexxy — E-Commerce Platform</h3>
+      <p>Modern full-stack e-commerce with secure authentication, product & order management, PayPal payments, RSA encryption, and polished modern UI/UX.</p>
+      <div class="ttags"><span class="tt">React</span><span class="tt">Redux</span><span class="tt">Node.js</span><span class="tt">JWT</span><span class="tt">RSA</span></div>
+      <a class="plink" href="https://flexxy-cloathing-store-app.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i> View Live</a>
+    </div>
+    <div class="pcard">
+      <h3>GazeType — Eye Keyboard</h3>
+      <p>Innovative eye-controlled keyboard using webcam-based gaze tracking with MediaPipe Face Mesh. No special hardware needed. Includes text-to-speech for accessibility.</p>
+      <div class="ttags"><span class="tt">Next.js</span><span class="tt">MediaPipe</span><span class="tt">Tailwind</span></div>
+      <a class="plink" href="https://github.com/abdullahiqbal93/GazeType" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <div class="pcard">
+      <h3>GYM Management System</h3>
+      <p>Web-based application for managing gym memberships, scheduling classes, and tracking member progress with a clean admin dashboard.</p>
+      <div class="ttags"><span class="tt">PHP</span><span class="tt">MySQL</span><span class="tt">JavaScript</span><span class="tt">HTML/CSS</span></div>
+      <a class="plink" href="https://github.com/abdullahiqbal93/Gym-Management-System" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <div class="pcard">
+      <h3>ERP System</h3>
+      <p>Enterprise resource planning web app managing customer data, item inventory, and generating comprehensive reports with role-based access control.</p>
+      <div class="ttags"><span class="tt">PHP</span><span class="tt">MySQL</span><span class="tt">JavaScript</span><span class="tt">HTML/CSS</span></div>
+      <a class="plink" href="https://github.com/abdullahiqbal93/ERP-System" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="ovl" id="ovl-skills">
+<div class="opanel">
+  <button class="ocls" onclick="close_('skills')">✕</button>
+  <div class="otag">skills.json</div>
+  <div class="ohead">Tech Arsenal.</div>
+  <div class="sgrid">
+    <div class="schip"><i class="fab fa-html5"></i><span>HTML5</span></div>
+    <div class="schip"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+    <div class="schip"><i class="fab fa-js"></i><span>JavaScript</span></div>
+    <div class="schip"><i class="fas fa-code"></i><span>TypeScript</span></div>
+    <div class="schip"><i class="fab fa-react"></i><span>React</span></div>
+    <div class="schip"><i class="fab fa-react"></i><span>Next.js</span></div>
+    <div class="schip"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+    <div class="schip"><i class="fab fa-node-js"></i><span>Express.js</span></div>
+    <div class="schip"><i class="fab fa-php"></i><span>PHP</span></div>
+    <div class="schip"><i class="fab fa-laravel"></i><span>Laravel</span></div>
+    <div class="schip"><i class="fab fa-java"></i><span>Java</span></div>
+    <div class="schip"><i class="fab fa-microsoft"></i><span>C#</span></div>
+    <div class="schip"><i class="fas fa-database"></i><span>MySQL</span></div>
+    <div class="schip"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+    <div class="schip"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+    <div class="schip"><i class="fab fa-sass"></i><span>SCSS</span></div>
+    <div class="schip"><i class="fas fa-wind"></i><span>Tailwind</span></div>
+    <div class="schip"><i class="fab fa-github"></i><span>Git / GitHub</span></div>
+  </div>
+</div>
+</div>
+
+<div class="ovl" id="ovl-exp">
+<div class="opanel">
+  <button class="ocls" onclick="close_('exp')">✕</button>
+  <div class="otag">education_and_experience.md</div>
+  <div class="ohead">My Journey.</div>
+  <div class="tline">
+    <div class="ti">
+      <div class="tdate">April 2018 — October 2020</div>
+      <div class="ttitle">GCE Advanced Level</div>
+      <div class="torg">Al-Azhar College</div>
+    </div>
+    <div class="ti">
+      <div class="tdate">March 2021 — April 2021</div>
+      <div class="ttitle">Web Developer — Beginner Course</div>
+      <div class="torg">UOM Open Learning Platform</div>
+    </div>
+    <div class="ti">
+      <div class="tdate">March 2021 — October 2024</div>
+      <div class="ttitle">HND in Information Technology</div>
+      <div class="torg">SLIATE</div>
+    </div>
+    <div class="ti">
+      <div class="tdate">August 2024 — February 2025</div>
+      <div class="ttitle">Software Developer Intern (Remote)</div>
+      <div class="torg">Dottech Softwares Pvt Ltd</div>
+    </div>
+    <div class="ti">
+      <div class="tdate">May 2025 — March 2026</div>
+      <div class="ttitle">BSc (Hons) Software Engineering</div>
+      <div class="torg">Cardiff Metropolitan University</div>
+    </div>
+    <div class="ti">
+      <div class="tdate">May 2025 — April 2026</div>
+      <div class="ttitle">Software Developer Intern (On-Site)</div>
+      <div class="torg">Saberion Pvt Ltd</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="ovl" id="ovl-contact">
+<div class="opanel">
+  <button class="ocls" onclick="close_('contact')">✕</button>
+  <div class="otag">contact.sh — initiate_connection()</div>
+  <div class="ohead">Let's Build Something.</div>
+  <div class="cgrid">
+    <div>
+      <div class="citem"><div class="cico"><i class="fas fa-phone"></i></div><div class="ctext">+94 77 944 5929</div></div>
+      <div class="citem"><div class="cico"><i class="fas fa-envelope"></i></div><div class="ctext">mohamedabdullah93@gmail.com</div></div>
+      <div class="citem"><div class="cico"><i class="fas fa-map-marker-alt"></i></div><div class="ctext">21 Kawdana Rd, Dehiwala,<br>Sri Lanka 🇱🇰</div></div>
+      <div class="citem"><div class="cico"><i class="fab fa-github"></i></div><div class="ctext"><a href="https://github.com/abdullahiqbal93" target="_blank">github.com/abdullahiqbal93</a></div></div>
+      <div class="citem"><div class="cico"><i class="fab fa-linkedin"></i></div><div class="ctext"><a href="https://www.linkedin.com/in/muhammed-abdullah-a13841300/" target="_blank">LinkedIn — Muhammed Abdullah</a></div></div>
+      <div class="citem"><div class="cico"><i class="fab fa-discord"></i></div><div class="ctext"><a href="https://discordapp.com/users/dedsec0379" target="_blank">discord: dedsec0379</a></div></div>
+    </div>
+    <div class="cform">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message — let's collaborate!"></textarea>
+      <button class="csend" onclick="sendMsg()"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="ovl" id="ovl-egg">
+<div class="opanel">
+  <button class="ocls" onclick="close_('egg')">✕</button>
+  <div class="egg-icon">☕</div>
+  <div class="ohead" style="font-size:clamp(18px,2.5vw,28px)">Fuel Level: Critical</div>
+  <p style="font-family:'Space Mono',monospace;font-size:clamp(9px,.9vw,12px);color:var(--dim);line-height:1.9;margin:14px 0">
+    This portfolio runs on approximately<br>
+    <span style="color:var(--lamp-warm);font-size:clamp(16px,2vw,22px);font-weight:700">∞ cups of coffee</span><br><br>
+    Currently compiling ideas at<br>
+    <span style="color:var(--mon-blue)">dev://imagination/live</span><br><br>
+    <span style="color:var(--dim)">Warning: May spontaneously<br> refactor your entire codebase</span>
+  </p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+    <button class="abtn" onclick="close_('egg');open_('projects')">See my work →</button>
+    <button class="abtn" onclick="close_('egg');open_('contact')">Hire me ☕</button>
+  </div>
+</div>
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
