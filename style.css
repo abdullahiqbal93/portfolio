@@ -1884,18 +1884,18 @@ body.lightning-active #lightning-flash {
   transform: translateY(-1px)
 }
 
-#ovl-egg .opanel {
+#ovl-coffee .opanel {
   max-width: 380px;
   text-align: center
 }
 
-.egg-icon {
+.coffee-icon {
   font-size: clamp(50px, 7vw, 80px);
   margin-bottom: 16px;
-  animation: eggBounce .8s ease infinite alternate
+  animation: coffeeBounce .8s ease infinite alternate
 }
 
-@keyframes eggBounce {
+@keyframes coffeeBounce {
   from {
     transform: scale(1)
   }
